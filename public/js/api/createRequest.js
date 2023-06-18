@@ -39,36 +39,3 @@ const createRequest = (options = {}) => {
 		options.callback(error, xhr.response);
 	}
 };
-
-// createRequest({
-// 	url: 'http://localhost:8000',
-// 	data: {
-// 	  mail: 'ivan@biz.pro',
-// 	  password: 'odinodin'
-// 	},
-// 	method: 'POST',
-// 		callback: (error, response) => {
-// 	  alert( 'Ошибка, если есть', error );
-// 	  console.log( 'Данные, если нет ошибки', response );
-// 	}
-//  });
-
-// здесь перечислены все возможные параметры для функции
-// createRequest({
-// 	url: 'http://localhost:8000', // адрес
-// 	data: { // произвольные данные, могут отсутствовать
-// 	  email: 'ivan@poselok.ru',
-// 	  password: 'odinodin'
-// 	},
-// 	method: 'GET', // метод запроса
-// 	/*
-// 	  Функция, которая сработает после запроса.
-// 	  Если в процессе запроса произойдёт ошибка, её объект
-// 	  должен быть в параметре err.
-// 	  Если в запросе есть данные, они должны быть переданы в response.
-// 	*/
-// 	callback: (error, response) => {
-// 	  console.log( 'Ошибка, если есть', error );
-// 	  console.log( 'Данные, если нет ошибки', response );
-// 	}
-//  });
