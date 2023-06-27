@@ -5,6 +5,10 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "password": "demo",
+      "id": "4rya58lj9ymeai"
     }
   ],
   "accounts": [
@@ -22,6 +26,16 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Инвест",
+      "user_id": "1",
+      "id": "4ry41wljbrcum6"
+    },
+    {
+      "name": "Тест",
+      "user_id": "1",
+      "id": "4ryn6gljbteouo"
     }
   ],
   "transactions": [

@@ -12,11 +12,11 @@ class Entity {
 
   static list(data, callback){
 	createRequest({
-		url: this.URL, //!! можно ли здесь использовать this
+		url: this.URL, 
 		data: data,
 		method: 'GET',
 		callback: callback,
-	});
+	})
   }
 
   /**
@@ -30,19 +30,20 @@ class Entity {
 		data: data,
 		method: 'PUT',
 		callback: callback,
-	});
+	})
+
   }
 
   /**
    * Удаляет информацию о счёте или доходе/расходе
    * (в зависимости от того, что наследуется от Entity)
    * */
-  static remove(data, callback ) {
+  static remove(data, callback) {
 	createRequest({
 		url: this.URL,
 		data: data,
 		method: 'DELETE',
 		callback: callback,
-	});
+	})
   }
 }
