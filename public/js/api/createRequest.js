@@ -14,25 +14,25 @@ const createRequest = (options = {}) => {
 		if (options.data) {
 			//При параметре method = GET, данные из объекта data должны передаваться в строке адреса
 			if (options.method === 'GET') {
-				if (options.data.email && options.data.password) {
-					url = `${options.url}?email=${options.data.email}&password=${options.data.password}`
+			
+				url = `${options.url}?`
+				//в цикле передаем гет-параметры
+				for (let key in options.data) {
+					//
+					let data = `${key}=${options.data[key]}&`
+					url = url + data;
 				}
-				if (options.data.account_id) {
-					url = `${options.url}?account_id=${options.data.account_id}`
-				}
+				//отрезаем последний амперсанд
+				url = url.slice(0, -1)
+				
 			} else {
 				//При параметре method отличном от GET, данные из объекта data должны передаваться через объект FormData
 				formData = new FormData();
 
-				formData.append('id', options.data.id);
-				formData.append('name', options.data.name);
-				formData.append('email', options.data.email);
-				formData.append('password', options.data.password);
+				for (let key in options.data) {
+					formData.append(key, options.data[key]);
+				}
 
-				//для Transaction
-				formData.append('type', options.data.type);
-				formData.append('sum', options.data.sum);
-				formData.append('account_id', options.data.account_id);
 			}
 		}
 		//!--------------------------------------------------------------------
