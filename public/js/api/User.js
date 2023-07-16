@@ -38,7 +38,30 @@ class User {
    * авторизованном пользователе.
    * */
   static fetch(callback) {
+	    // ...
+		 let url = this.URL + '/current';
 
+		 createRequest({
+			// ...
+			url: url,
+			method: 'GET',
+			// задаём функцию обратного вызова
+			callback: (err, response) => {
+			  if ( response && response.user ) {
+				 //console.log(response.user)
+				 this.setCurrent(response.user);
+			  } else {
+				//console.log('unset done');
+				this.unsetCurrent();
+			  }
+			  // ...
+			  // вызываем параметр, переданный в метод fetch
+			  callback( err, response );
+			}
+			// ...
+		 });
+
+		//console.log(xhr);
   }
 
   /**
@@ -69,7 +92,17 @@ class User {
    * User.setCurrent.
    * */
   static register(data, callback) {
-
+	createRequest({
+		url: this.URL + '/register',
+		data,
+		method: 'POST',
+		callback: (err, response) => {
+			if (response && response.user) {
+				this.setCurrent(response.user);
+			}
+		callback(err, response);
+		}
+	})
   }
 
   /**
@@ -78,5 +111,16 @@ class User {
    * */
   static logout(callback) {
 
+	createRequest({
+		url: this.URL + '/logout',
+		method: 'POST',
+		callback: (err, response) => {
+			if (response) {
+				//console.log(User.current());
+				this.unsetCurrent();
+			}
+			callback(err, response);
+		}
+	});
   }
 }

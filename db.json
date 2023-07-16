@@ -9,6 +9,30 @@
     {
       "password": "demo",
       "id": "4rya58lj9ymeai"
+    },
+    {
+      "name": "new user",
+      "email": "1@1.ru",
+      "password": "1234",
+      "id": "4rybzwlk4zdt5f"
+    },
+    {
+      "name": "Vlad",
+      "email": "test@.ru",
+      "password": "abracadabra",
+      "id": "4ry8uglk4zfw64"
+    },
+    {
+      "name": "Vlas",
+      "email": "testtest.ru",
+      "password": "abracadabr",
+      "id": "4ryd74lk4zgo1n"
+    },
+    {
+      "name": "las",
+      "email": "test1@test.ru",
+      "password": "abr",
+      "id": "4ryhk4lk4zidr2"
     }
   ],
   "accounts": [
@@ -173,15 +197,6 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
-    },
-    {
-      "id": "4ry6wcljlau8n4",
-      "type": "expense",
-      "name": "Тест",
-      "sum": 333333,
-      "account_id": "4",
-      "user_id": "1",
-      "created_at": "2023-07-02T10:38:27.135Z"
     }
   ]
 }
