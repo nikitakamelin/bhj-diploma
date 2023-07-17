@@ -22,9 +22,7 @@ class Sidebar {
 
 	sidebarButton.addEventListener('click', () => {
 		['sidebar-open', 'sidebar-collapse'].map(cl => document.body.classList.toggle(cl));
-
 	});
-
   }
 
   /**
