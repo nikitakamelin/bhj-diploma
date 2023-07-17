@@ -37,7 +37,6 @@ class Sidebar {
 	const loginButton = document.querySelector(".menu-item_login");
 	const logoutButton = document.querySelector(".menu-item_logout");
 
-	
 	registerButton.addEventListener('click', e => {
 		e.preventDefault();
 
