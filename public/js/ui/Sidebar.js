@@ -33,6 +33,32 @@ class Sidebar {
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
+	const registerButton = document.querySelector(".menu-item_register");
+	const loginButton = document.querySelector(".menu-item_login");
+	const logoutButton = document.querySelector(".menu-item_logout");
 
+	
+	registerButton.addEventListener('click', e => {
+		e.preventDefault();
+
+		const modalWindow = App.getModal('register');
+		modalWindow.open();
+	})
+	loginButton.addEventListener('click', e => {
+		e.preventDefault();
+
+		const modalWindow = App.getModal('login');
+		modalWindow.open();
+	})
+	logoutButton.addEventListener('click', e => {
+		e.preventDefault();
+		
+		User.logout((err,response) => {
+			if (response.success === 'true') {
+				App.setState('init');
+			}
+			//console.log(err,response);
+	  });
+	})
   }
 }
