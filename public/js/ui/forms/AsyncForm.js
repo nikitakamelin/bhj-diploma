@@ -40,7 +40,9 @@ class AsyncForm {
    * }
    * */
   getData() {
-	return new FormData(this.element);
+	let formData = new FormData(this.element);
+	return Object.fromEntries(formData);
+	//return new FormData(this.element);
   }
 
   onSubmit(options){
