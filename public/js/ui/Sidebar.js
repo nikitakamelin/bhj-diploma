@@ -18,7 +18,8 @@ class Sidebar {
    * при нажатии на кнопку .sidebar-toggle
    * */
   static initToggleButton() {
-	const sidebarButton = document.querySelector('.sidebar-toggle');
+	//const sidebarButton = document.querySelector('.sidebar-toggle');
+	const sidebarButton = document.querySelector('[data-toggle="push-menu"]');
 
 	sidebarButton.addEventListener('click', () => {
 		['sidebar-open', 'sidebar-collapse'].map(cl => document.body.classList.toggle(cl));
@@ -53,9 +54,9 @@ class Sidebar {
 		e.preventDefault();
 		
 		User.logout((err,response) => {
-			if (response.success === 'true') {
+			if (response.success) {
 				App.setState('init');
-			}
+			} 
 			//console.log(err,response);
 	  });
 	})

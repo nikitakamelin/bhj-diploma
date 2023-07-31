@@ -11,5 +11,18 @@ class LoginForm extends AsyncForm {
    * */
   onSubmit(data) {
 
+	let callback = (err,response) => {            //! никак не используем err
+		if (response.success) {
+			App.setState('user-logged');
+
+			//чтобы закрыть окно авторизации, находим модальное окно у формы, используя контекст
+			//закрываем через метод close()
+			const modal = new Modal(this.element.closest('#modal-login'));
+			modal.close();
+		} else {
+			alert(response.error);
+		}
+	} 
+	User.login(data, callback);
   }
 }

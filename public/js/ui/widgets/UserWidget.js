@@ -12,7 +12,11 @@ class UserWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor(element){
-
+	try {
+		this.element = element;
+	} catch (error) {
+		console.error(`Элемент не найден. Ошибка: ${error}`);  //! Как вызвать эту ошибку? 
+	}
   }
 
   /**
@@ -23,6 +27,7 @@ class UserWidget {
    * авторизованного пользователя
    * */
   update(){
-
+	const elementName = document.querySelector('.user-name');
+	elementName.innerHTML = User.current().name;
   }
 }

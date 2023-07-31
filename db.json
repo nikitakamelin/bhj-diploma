@@ -33,6 +33,12 @@
       "email": "test1@test.ru",
       "password": "abr",
       "id": "4ryhk4lk4zidr2"
+    },
+    {
+      "name": "Никита",
+      "email": "nkamelin@gmail.com",
+      "password": "qwerty",
+      "id": "4rye8lkqjlrjc"
     }
   ],
   "accounts": [

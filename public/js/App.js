@@ -66,7 +66,7 @@ class App {
       transactions: new TransactionsWidget(
         document.querySelector(".transactions-panel")
       ),
-      user: new UserWidget(document.querySelector(".user-panel")),
+      user: new UserWidget(document.querySelector(".user-panel")),  //! метод сработал даже когда специально ввёл ошибку в querySelector
     };
   }
 
