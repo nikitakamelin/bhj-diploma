@@ -8,15 +8,35 @@ class CreateTransactionForm extends AsyncForm {
    * метод renderAccountsList
    * */
   constructor(element) {
-    super(element)
+    super(element);
+
+	 this.renderAccountsList();
   }
 
   /**
-   * Получает список счетов с помощью Account.list
+   * Получает список счетов с помощью Accountlist
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
+//*----------------------------------------------------------------------
+	// Account.list(User.current(), (error, response) => {
+	// 	if (response.success) {
+	// 		//console.log(this.element.id)
+	// 		if (this.element.id === 'new-income-form') {
+	// 			console.log(response.data)
+	// 			response.data.forEach(item => {
+	// 				document.querySelector('#income-accounts-list').innerHTML += `<option value="${item.id}">${item.name}</option>`;
+	// 			})
+				 
+	// 		}
+	// 	} else {
+	// 		console.error(error);
+	// 	}
+	// });
+	//*----------------------------------------------------------------------
+	//const callback = 
 
+	console.log(User.current())
   }
 
   /**
