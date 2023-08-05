@@ -61,7 +61,7 @@ class TransactionsPage {
    * в TransactionsPage.renderTransactions()
    * */
   render(options){
-
+	console.log(options)
   }
 
   /**

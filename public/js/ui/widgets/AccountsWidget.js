@@ -16,6 +16,7 @@ class AccountsWidget {
   constructor( element ) {
 	try {
 		this.element = element;
+		
 		this.registerEvents();
 		this.update();
 	} catch (error) {
@@ -32,29 +33,16 @@ class AccountsWidget {
    * */
   registerEvents() {
 
-	const createAccountButtons = [...document.getElementsByClassName('create-account')];
+	this.element.addEventListener('click', (e) => {
+		e.preventDefault();
 
-	createAccountButtons.forEach(item => {
-		item.addEventListener('click', e => {
-			e.preventDefault();
-			
+		if (e.target.classList.contains('create-account')) {
 			App.getModal('createAccount').open();
-		})
+		} 
+
+		this.onSelectAccount(e.target);
 	});
-
-	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	const existingAccounts = [...document.getElementsByClassName('account')];
-	console.log(existingAccounts)
-
-	// existingAccounts.forEach(item => {
-	// 	item.addEventListener('click', e => {
-	// 		e.preventDefault();
-
-	// 		console.log('smth')
-	// 	});
-	// })
-	}
-	//!-----------------------------------------
+  }
 
   /**
    * Метод доступен только авторизованным пользователям
@@ -68,26 +56,20 @@ class AccountsWidget {
    * */
   update() {
 	if (User.current()) {
-
 		Account.list(User.current(), (err, response) => {
 			if (response.success) {
 				this.clear();
-				//console.log(response.data)
 				this.renderItem(response.data);
-				//console.log(response.data)
 			}
 		});
 	}
   }
-
   /**
    * Очищает список ранее отображённых счетов.
    * Для этого необходимо удалять все элементы .account
    * в боковой колонке
    * */
   clear() {
-	//console.log("clear");
-	//[...document.querySelectorAll('.account')].forEach(item => item.remove())
 	[...document.getElementsByClassName('account')].forEach(item => item.remove())
   }
 
@@ -99,7 +81,18 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-	console.log('onSelectAccount');
+
+	//Удаляет ранее выбранному элементу cчёта класс .active
+	const arr = this.element.querySelectorAll('.account');
+	arr.forEach(item => item.classList.remove('active'));
+
+	//Устанавливает текущему выбранному элементу счёта класс .active.
+	if (element.closest('.account')) {
+		const account = element.closest('.account');
+		account.classList.add('active');
+
+		App.showPage('transactions', { account_id: account.dataset.id });
+	}
   }
 
   /**
@@ -116,8 +109,6 @@ class AccountsWidget {
 				</a>
 			 </li>`;
    }
-
-
   /**
    * Получает массив с информацией о счетах.
    * Отображает полученный с помощью метода
