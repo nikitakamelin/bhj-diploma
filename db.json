@@ -203,6 +203,51 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "4ry2q8lkz362jf",
+      "type": "income",
+      "name": "Тест",
+      "sum": 1111,
+      "account_id": "4ryn6gljbteouo",
+      "user_id": "1",
+      "created_at": "2023-08-06T06:52:10.971Z"
+    },
+    {
+      "id": "4ryerglkz3648y",
+      "type": "income",
+      "name": "Тест",
+      "sum": 1111,
+      "account_id": "1",
+      "user_id": "1",
+      "created_at": "2023-08-06T06:52:13.185Z"
+    },
+    {
+      "id": "4ry2fclkz3gf7n",
+      "type": "income",
+      "name": "Тест 3",
+      "sum": 55555,
+      "account_id": "4ry41wljbrcum6",
+      "user_id": "1",
+      "created_at": "2023-08-06T07:00:13.954Z"
+    },
+    {
+      "id": "4ryjxklkz3zrv0",
+      "type": "income",
+      "name": "Доход тест",
+      "sum": 77777,
+      "account_id": "3",
+      "user_id": "1",
+      "created_at": "2023-08-06T07:15:16.811Z"
+    },
+    {
+      "id": "4ryemslkz697ao",
+      "type": "income",
+      "name": "dsd",
+      "sum": 767,
+      "account_id": "2",
+      "user_id": "1",
+      "created_at": "2023-08-06T08:18:35.951Z"
     }
   ]
 }

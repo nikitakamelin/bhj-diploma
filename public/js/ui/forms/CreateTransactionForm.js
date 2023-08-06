@@ -18,27 +18,23 @@ class CreateTransactionForm extends AsyncForm {
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
-//*----------------------------------------------------------------------
-	// Account.list(User.current(), (error, response) => {
-	// 	if (response.success) {
-	// 		//console.log(this.element.id)
-	// 		if (this.element.id === 'new-income-form') {
-	// 			console.log(response.data)
-	// 			response.data.forEach(item => {
-	// 				document.querySelector('#income-accounts-list').innerHTML += `<option value="${item.id}">${item.name}</option>`;
-	// 			})
-				 
-	// 		}
-	// 	} else {
-	// 		console.error(error);
-	// 	}
-	// });
-	//*----------------------------------------------------------------------
-	//const callback = 
-
-	console.log(User.current())
+//*--------------------- ОТРИСОВЫВАЕТСЯ 2 РАЗА -------------------------------------
+	Account.list(User.current(), (error, response) => {
+		if (response.success) {
+			//console.log(this.element.id)
+			if (this.element.id === 'new-income-form') {
+				console.log(response.data)
+				response.data.forEach(item => {
+					//console.log(item.id);
+					document.querySelector('#income-accounts-list').innerHTML += `<option value="${item.id}">${item.name}</option>`;
+				})
+			}
+		} else {
+			console.error(error);
+		}
+	});
   }
-
+	//*----------------------------------------------------------------------
   /**
    * Создаёт новую транзакцию (доход или расход)
    * с помощью Transaction.create. По успешному результату
@@ -47,5 +43,19 @@ class CreateTransactionForm extends AsyncForm {
    * */
   onSubmit(data) {
 
+	Transaction.create(data, (err, response) => {
+		if (response.success) {
+			App.update();
+			this.element.reset();
+			let modal = {};
+			if (this.element.id === 'new-income-form') {
+				modal = new Modal(document.querySelector('#modal-new-income')); 
+			}
+			if (this.element.id === 'new-expense-form') {
+				modal = new Modal(document.querySelector('#modal-new-expense')); 
+			}
+			modal.close();
+		}
+	});
   }
 }
