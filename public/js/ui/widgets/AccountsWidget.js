@@ -39,7 +39,7 @@ class AccountsWidget {
 		if (e.target.classList.contains('create-account')) {
 			App.getModal('createAccount').open();
 		} 
-
+		//console.log(e.target)
 		this.onSelectAccount(e.target);
 	});
   }
@@ -81,18 +81,16 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
+	const account = element.closest('.account');
 
 	//Удаляет ранее выбранному элементу cчёта класс .active
 	const arr = this.element.querySelectorAll('.account');
 	arr.forEach(item => item.classList.remove('active'));
 
-	//Устанавливает текущему выбранному элементу счёта класс .active.
-	if (element.closest('.account')) {
-		const account = element.closest('.account');
-		account.classList.add('active');
-
-		App.showPage('transactions', { account_id: account.dataset.id });
-	}
+	//Устанавливает текущему выбранному элементу счёта
+	account.classList.add('active');
+	//console.log({ account_id: account.dataset.id })
+   App.showPage('transactions', { account_id: account.dataset.id });
   }
 
   /**

@@ -15,6 +15,7 @@ class TransactionsWidget {
 	try {
 		this.element = element;
 		this.registerEvents(); //! --> этого нет в описании, но пришлось добавить, чтобы работало
+		//console.log(this.element);
 	} catch (error) {
 		console.error(`Элемент не найден. Ошибка: ${error}`);
 	}
@@ -28,6 +29,7 @@ class TransactionsWidget {
   registerEvents() {
 
 	this.element.addEventListener('click', (e) => {
+		
 		if (e.target.classList.contains('create-income-button')) {
 			App.getModal('newIncome').open();
 		}

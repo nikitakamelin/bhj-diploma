@@ -12,8 +12,10 @@ class CreateAccountForm extends AsyncForm {
 	let callback = (err, response) => {
 		if (response.success) {
 			App.update();
-
-			console.log(this.element);
+			this.element.reset();
+			const modal = new Modal(document.querySelector('#modal-new-account'));
+			modal.close();
+			//console.log(this.element);
 		} else {
 			alert(response.error);
 		}

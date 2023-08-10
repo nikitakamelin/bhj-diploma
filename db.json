@@ -63,9 +63,14 @@
       "id": "4ry41wljbrcum6"
     },
     {
+      "name": "dsd",
+      "user_id": "1",
+      "id": "4ry9lsll4weu0d"
+    },
+    {
       "name": "Тест",
       "user_id": "1",
-      "id": "4ryn6gljbteouo"
+      "id": "4rykicll4wyfoe"
     }
   ],
   "transactions": [
@@ -205,15 +210,6 @@
       "user_id": "1"
     },
     {
-      "id": "4ry2q8lkz362jf",
-      "type": "income",
-      "name": "Тест",
-      "sum": 1111,
-      "account_id": "4ryn6gljbteouo",
-      "user_id": "1",
-      "created_at": "2023-08-06T06:52:10.971Z"
-    },
-    {
       "id": "4ryerglkz3648y",
       "type": "income",
       "name": "Тест",
@@ -248,6 +244,78 @@
       "account_id": "2",
       "user_id": "1",
       "created_at": "2023-08-06T08:18:35.951Z"
+    },
+    {
+      "id": "4ryf3wll3c8nts",
+      "type": "income",
+      "name": "Название",
+      "sum": 4444,
+      "account_id": "3",
+      "user_id": "1",
+      "created_at": "2023-08-09T06:17:13.119Z"
+    },
+    {
+      "id": "4ry5z4ll3cl12a",
+      "type": "income",
+      "name": "Какой-то доход",
+      "sum": 17,
+      "account_id": "2",
+      "user_id": "1",
+      "created_at": "2023-08-09T06:26:50.145Z"
+    },
+    {
+      "id": "4rybzgll3clrku",
+      "type": "income",
+      "name": "dsd",
+      "sum": 100,
+      "account_id": "1",
+      "user_id": "1",
+      "created_at": "2023-08-09T06:27:24.509Z"
+    },
+    {
+      "id": "4ry2ikll4umsle",
+      "type": "expense",
+      "name": "dsd",
+      "sum": 500,
+      "account_id": "4ryjfwll4ukphn",
+      "user_id": "1",
+      "created_at": "2023-08-10T07:39:51.745Z"
+    },
+    {
+      "id": "4ry9egll4wc4lw",
+      "type": "income",
+      "name": "dsd",
+      "sum": 500,
+      "account_id": "4ryosll4w6hq3",
+      "user_id": "1",
+      "created_at": "2023-08-10T08:27:33.331Z"
+    },
+    {
+      "id": "4ry9s0ll4wnogo",
+      "type": "income",
+      "name": "dsd",
+      "sum": 500,
+      "account_id": "4ry9lsll4weu0d",
+      "user_id": "1",
+      "created_at": "2023-08-10T08:36:32.279Z"
+    },
+    {
+      "id": "4ryln8ll4wra1z",
+      "type": "expense",
+      "name": "adf",
+      "sum": 5555,
+      "account_id": "4ry9lsll4weu0d",
+      "user_id": "1",
+      "created_at": "2023-08-10T08:39:20.230Z"
+    },
+    {
+      "id": "4ry3owll4yngar",
+      "type": "income",
+      "name": "sd",
+      "sum": 9,
+      "account_id": "4ry9lsll4weu0d",
+      "user_id": "1",
+      "created_at": "2023-08-10T09:32:20.930Z"
     }
   ]
 }
