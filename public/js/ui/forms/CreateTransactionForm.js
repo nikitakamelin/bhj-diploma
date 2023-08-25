@@ -18,18 +18,16 @@ class CreateTransactionForm extends AsyncForm {
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
-	const selects = [...document.querySelectorAll('select[name="account_id"]')];
+
 	Account.list(User.current(), (error, response) => {
 		if (response.success) {
-		
-			selects.forEach(select => {
-				if (select.options.length === 0) {
-					response.data.forEach((item) => {
-						select.insertAdjacentHTML('beforeend', `<option value="${item.id}">${item.name}</option>`);
-					});
-				}
+			
+			//* подсказали исключить дублирование через new Option
+			const select = this.element.querySelector('.accounts-select');
+			response.data.forEach((item, index) => {
+					select.options[index] = new Option(item.name, item.id);
 			});
-
+			
 		} else {
 			console.error(error);
 		}
