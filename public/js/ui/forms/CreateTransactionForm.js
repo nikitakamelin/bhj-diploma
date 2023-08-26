@@ -28,9 +28,10 @@ class CreateTransactionForm extends AsyncForm {
 					select.options[index] = new Option(item.name, item.id);
 			});
 			
-		} else {
-			console.error(error);
-		}
+		} 
+		// else {
+		// 	console.error(error);
+		// }
 	});
   }
   /**

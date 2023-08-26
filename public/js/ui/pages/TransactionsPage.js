@@ -25,8 +25,8 @@ class TransactionsPage {
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-	console.log('ластОпшнс: ', this.lastOptions);
-	//this.render(this.lastOptions);
+	//console.log('ластОпшнс: ', this.lastOptions);
+	this.render(this.lastOptions);
 
   }
 
@@ -72,6 +72,7 @@ class TransactionsPage {
 			if (response.success) {
 				App.updateWidgets();
 				App.updateForms();
+				
 			}		
 		});
 		this.clear();
@@ -129,6 +130,9 @@ class TransactionsPage {
    * Устанавливает заголовок: «Название счёта»
    * */
   clear() {
+	//let arr = Array.apply(null, Array(0));
+	//console.log('clear')
+
 	this.renderTransactions([]);
 	this.renderTitle('Название счёта');
 	this.lastOptions = null;
@@ -162,6 +166,7 @@ class TransactionsPage {
    * item - объект с информацией о транзакции
    * */
   getTransactionHTML(item){
+	console.log('item')
 	return `
 		<div class="transaction transaction_${item.type} row">
 			<div class="col-md-7 transaction__details">
@@ -192,9 +197,10 @@ class TransactionsPage {
    * используя getTransactionHTML
    * */
   renderTransactions(data){
+		this.element.querySelector('.content').innerHTML = '';
 		
 		data.forEach(item => {
-			this.element.querySelector('.content').insertAdjacentHTML('beforeend', this.getTransactionHTML(item));		
+			this.element.querySelector('.content').insertAdjacentHTML('beforeend', this.getTransactionHTML(item));	
 		});
   }
 }

@@ -55,6 +55,7 @@ class Sidebar {
 		
 		User.logout((err,response) => {
 			if (response.success) {
+				//console.log('выйти')
 				App.setState('init');
 			} 
 			//console.log(err,response);

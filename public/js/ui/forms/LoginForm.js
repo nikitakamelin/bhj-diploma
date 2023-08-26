@@ -11,7 +11,7 @@ class LoginForm extends AsyncForm {
    * */
   onSubmit(data) {
 
-	let callback = (err,response) => {            //! никак не используем err
+	let callback = (err,response) => {            
 		if (response.success) {
 			App.setState('user-logged');
 

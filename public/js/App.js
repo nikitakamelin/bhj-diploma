@@ -160,6 +160,7 @@ class App {
       this.update();
     }
     if (state === "init") {
+		//console.log('setstate init')
       this.clear();
     }
   }
@@ -171,6 +172,7 @@ class App {
    * метод clear()
    * */
   static clear() {
+		//console.log(this.getPage('transactions'))
     this.getPage("transactions").clear();
   }
 

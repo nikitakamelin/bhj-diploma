@@ -39,6 +39,12 @@
       "email": "nkamelin@gmail.com",
       "password": "qwerty",
       "id": "4rye8lkqjlrjc"
+    },
+    {
+      "name": "Тест тест",
+      "email": "t@t.ru",
+      "password": "12345",
+      "id": "4ryk1gllrnny72"
     }
   ],
   "accounts": [
@@ -63,14 +69,19 @@
       "id": "4ry41wljbrcum6"
     },
     {
-      "name": "dsd",
-      "user_id": "1",
-      "id": "4ry9lsll4weu0d"
-    },
-    {
       "name": "Тест",
       "user_id": "1",
-      "id": "4rykicll4wyfoe"
+      "id": "4ry1psllrndz3x"
+    },
+    {
+      "name": "Мой банк",
+      "user_id": "4ryk1gllrnny72",
+      "id": "4ryfs0llrnp4kp"
+    },
+    {
+      "name": "dsd",
+      "user_id": "1",
+      "id": "4ry69ollrv9wqj"
     }
   ],
   "transactions": [
@@ -246,15 +257,6 @@
       "created_at": "2023-08-06T08:18:35.951Z"
     },
     {
-      "id": "4ryf3wll3c8nts",
-      "type": "income",
-      "name": "Название",
-      "sum": 4444,
-      "account_id": "3",
-      "user_id": "1",
-      "created_at": "2023-08-09T06:17:13.119Z"
-    },
-    {
       "id": "4ry5z4ll3cl12a",
       "type": "income",
       "name": "Какой-то доход",
@@ -291,31 +293,22 @@
       "created_at": "2023-08-10T08:27:33.331Z"
     },
     {
-      "id": "4ry9s0ll4wnogo",
-      "type": "income",
-      "name": "dsd",
-      "sum": 500,
-      "account_id": "4ry9lsll4weu0d",
-      "user_id": "1",
-      "created_at": "2023-08-10T08:36:32.279Z"
-    },
-    {
-      "id": "4ryln8ll4wra1z",
+      "id": "4ryjrcllrnpblv",
       "type": "expense",
-      "name": "adf",
-      "sum": 5555,
-      "account_id": "4ry9lsll4weu0d",
-      "user_id": "1",
-      "created_at": "2023-08-10T08:39:20.230Z"
+      "name": "Тест",
+      "sum": 500,
+      "account_id": "4ryfs0llrnp4kp",
+      "user_id": "4ryk1gllrnny72",
+      "created_at": "2023-08-26T06:44:34.434Z"
     },
     {
-      "id": "4ry3owll4yngar",
+      "id": "4ryh0wllrvabdv",
       "type": "income",
-      "name": "sd",
-      "sum": 9,
-      "account_id": "4ry9lsll4weu0d",
+      "name": "Норникель",
+      "sum": 1000,
+      "account_id": "4ry41wljbrcum6",
       "user_id": "1",
-      "created_at": "2023-08-10T09:32:20.930Z"
+      "created_at": "2023-08-26T10:16:51.234Z"
     }
   ]
 }
